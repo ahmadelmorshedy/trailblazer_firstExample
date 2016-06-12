@@ -7,6 +7,14 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def items_sale
+    items = Item.all
+    @items_sale = []
+    items.each do |item|
+      @items_sale << "#{item.name}, #{item.price/2.0}"
+    end
+  end
+
   # GET /items/1
   # GET /items/1.json
   def show
